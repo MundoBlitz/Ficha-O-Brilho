@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Personagem - O Brilho</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>FICHA DE PERSONAGEM - O Brilho</h1>
+        
+        <div class="field">
+            <label for="name">Nome:</label>
+            <input type="text" id="name">
+            <label for="patente">Patente:</label>
+            <select id="patente">
+                <option value="Recruta">Recruta</option>
+                <option value="Agente">Agente</option>
+                <option value="Especialista">Especialista</option>
+                <option value="Capitão">Capitão</option>
+                <option value="Diretor">Diretor</option>
+            </select>
+            <div class="image-container">
+                <img id="characterImage" src="#" alt="Imagem do personagem">
+                <input type="file" id="imageUpload">
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="history">HISTÓRIA</label>
+            <textarea id="history" rows="4" cols="50"></textarea>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <label for="vidaMax">PV (Pontos de Vida):</label>
+                <input type="number" id="vidaMax" readonly placeholder="vida Maxima">
+                <input type="number" id="danoVida" placeholder="Dano">
+                <input type="number" id="vidaAtual" readonly placeholder="vida Atual">
+            </div>
+            <div class="stat">
+                <label for="manaMax">PM (Pontos de Mana):</label>
+                <input type="number" id="manaMax" readonly placeholder="mana Maxima">
+                <input type="number" id="danoMana" placeholder="Gasto">
+                <input type="number" id="manaAtual" readonly placeholder="mana Atual">
+            </div>
+            <div class="stat">
+                <label for="pp">PP (Pontos de personagem):</label>
+                <input type="number" id="pp">
+            </div>
+        </div>
+
+        <div class="experience">
+            <label>EXPERIÊNCIA</label>
+            <div class="checkbox-container">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+                <input type="checkbox" class="exp-checkbox">
+            </div>
+        </div>
+
+        <div class="attributes">
+            <label>CARACTERÍSTICAS</label>
+            <div class="attribute">
+                <label for="forca">Força</label>
+                <input type="number" id="forca" class="attribute-input">
+            </div>
+            <div class="attribute">
+                <label for="habilidade">Habilidade</label>
+                <input type="number" id="habilidade" class="attribute-input">
+            </div>
+            <div class="attribute">
+                <label for="resistencia">Resistência</label>
+                <input type="number" id="resistencia" class="attribute-input">
+            </div>
+            <div class="attribute">
+                <label for="armadura">Armadura</label>
+                <input type="number" id="armadura" class="attribute-input">
+            </div>
+            <div class="attribute">
+                <label for="pdf">Poder de Fogo</label>
+                <input type="number" id="pdf" class="attribute-input">
+            </div>
+            <div class="attribute">
+                <label for="brilho">Brilho</label>
+                <input type="number" id="brilho" class="attribute-input">
+            </div>
+        </div>
+
+        <div class="field">
+            <label>VANTAGENS</label>
+            <div id="vantagensContainer"></div>
+            <button type="button" id="addVantagem">Adicionar</button>
+        </div>
+
+        <div class="field">
+            <label>DESVANTAGENS</label>
+            <div id="desvantagensContainer"></div>
+            <button type="button" id="addDesvantagem">Adicionar</button>
+        </div>
+
+        <div class="field">
+            <label>PERÍCIAS</label>
+            <div id="periciasContainer"></div>
+            <button type="button" id="addPericia">Adicionar</button>
+        </div>
+
+        <div class="field">
+            <label>RECURSOS</label>
+            <textarea id="resources" rows="4" cols="50"></textarea>
+        </div>
+
+        <button id="downloadPdf">Baixar a ficha como PDF</button>
+        <button id="saveCharacter">Salvar a ficha</button>
+        <button id="loadCharacter">Carregar Ficha</button>
+        <input type="file" id="fileInput" style="display: none;">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
